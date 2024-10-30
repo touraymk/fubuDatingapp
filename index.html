@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FuBu || en datingapp for kvinner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!--Modell og global funksjoner-->
+    <script src="js/model.js"></script>
+    <script src="common.js"></script>
+
+    <!--Hovedside-->
+    <script src="js/main/mainView.js"></script>
+    <script src="js/main/mainCtr.js"></script>
+
+    <!--Logg inn side-->
+    <script src="js/logIn/logInView.js"></script>
+    <script src="js/logIn/logInCtr.js"></script>
+
+    <!--Profil side-->
+    <script src="js/profile/profileView.js"></script>
+    <script src="js/profile/profileCtr.js"></script>
+
+    <!--Directe meldinger-->
+    <script src="js/DM/dMView.js"></script>
+    <script src="js/DM/dMCtr.js"></script>
+
+    <!--Profile shuffel-->
+    <script src="js/profileShuffle/profileShuffleView.js"></script>
+    <script src="js/profileShuffle/profileShuffleCtr.js"></script>
+
+    <!--Create profile-->
+    <script src="js/createProfile/createProfileView.js"></script>
+    <script src="js/createProfile/createProfileCtr.js"></script>
+
+    <!--View-->
+    <script>
+      updateView();
+
+      function updateView() {
+        const page = model.app.page;
+
+        if (page === "main") updateViewMain();
+        if (page === "logIn") updateViewLogIn();
+        if (page === "profile") updateViewProfile();
+        if (page === "shuffle") updateViewProfileShuffle();
+        if (page === "create") updateViewCreateProfile();
+      }
+    </script>
+  </body>
+</html>
